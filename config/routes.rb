@@ -1,13 +1,21 @@
 SampleApp::Application.routes.draw do
+  
+	# Named Routes.
 
-  # Pages
-  # GET - home
-  get "pages/home"
+	# Home
+	root :to => 'pages#home'
 
-  # GET - contact
-  get "pages/contact"
+	# Contact
+	match '/contact', :to => 'pages#contact'
 
-  # GET - about
-  get "pages/about"
+	#About
+	match '/about', :to => 'pages#about'
+
+	# Help
+	match '/help', :to => 'pages#help'
+
+	# SignUp
+	get "users/new"
+	match '/signup', :to => 'users#new'
   
 end
